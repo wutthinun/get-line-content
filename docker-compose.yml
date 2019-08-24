@@ -1,0 +1,16 @@
+version: '3'
+services:
+  get_line_content:
+    image: get_line_content
+    container_name: get_line_content
+    build: .
+    environment:
+      NODE_ENV: production
+      LINE_BOT: "zKGWLHhh68a7hfZ0AbLeRjP9aXiryOCnFvr88FoHvCsxPjNcoZNahg7AGFXyqRQGY3M0LSwfUgfDwQjU5Bn9diEcKijm795FtsU9Nw0ohZwzwHUtjIHGWHU22lpwa6mM1c16J4p8ibg80pTE1ySvdQdB04t89/1O/w1cDnyilFU="
+      FILE_PATH: "/usr/FILE"
+      LINE_MSG_API: "https://api.line.me/v2/bot/message"
+      LINE_USR_API: "https://api.line.me/v2/bot/profile"
+    ports:
+      - 3001:3001
+    volumes: 
+      - ./FILE:/usr/FILE
